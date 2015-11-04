@@ -29,6 +29,7 @@ func main() {
 
     v := &Version{}
     versionMux := version.New(v)
+    //Add versionMux to your application mux
     mux.Handle("/", versionMux)
 
     log.Fatal(http.ListenAndServe(":8080", mux))
